@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+/*引入字体*/
+
+/* 定义颜色变量（十六进制版本） */
+:root {
+  --color-white: #FFFFFF;
+  --color-light-blue: #D5E1EF;
+  --color-black:#242C46;
+  --color-grey:#91959E;
+}
+
+/*通用样式重置*/
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0；
+}
+
+/*页面主体设置*/
+body{
+    font-family: 'Outfit',sans-serif; /*首选Outfit，备选'sans-serif'*/
+    background-color:var(--color-light-blue);
+    display: flex; /*这个属性将body元素变成一个Flex容器*/
+    flex-direction: column; /*把flexbox改成纵向的，这样.qr-code-card和.attribution两个元素在页面上从上到下垂直排列*/
+    justify-content: center; /*控制子元素在主轴上的对齐方式*/
+    align-items: center; /*这个属性用于控制子元素在交叉轴上的对齐方式*/
+    min-height: 100vh; /*vh代表视口高度。100vh意味着body元素的高度至少是浏览器可视区域的100%*/
+    margin: 1.5em; /*这个属性为body元素设置为1.5rem的外边距*/
+}
+
+.qr-code-card {
+    background-color: var(--color-white);
+    padding: 1rem; /* 设置内边距 */
+    border-radius: 1.25rem; /* 设置圆角 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    width: 20rem; /* 设置卡片宽度，约 320px */
+    text-align: center; /* 卡片内文本居中 */
+}
+
+.qr-code-card img{
+    width: 100%; /*图片宽度自适应卡片容器*/
+    border-radius: 0.75rem; /*图片圆角*/
+}
+
+.qr-code-card h2{
+    font-size: 1.375rem;/* 设置标题字体大小 */
+    font-weight: 700;/* 设置字体粗细为粗体 */
+    color: var(--color-black);
+    margin-top:1.5rem;/* 设置顶部外边距 */
+    padding:0 0.5rem;/* 设置左右内边距 */
+    line-height: 1.2; /* 设置行高 */
+}
+
+.qr-code-card p{
+    font-size :0.9375rem;
+    font-weight: 400; /* 设置字体粗细为正常 */
+    color:var(--color-grey);
+    margin-top: 1rem; /* 设置顶部外边距 */
+    padding: 0 1.25rem; /* 设置左右内边距 */
+    line-height: 1.3; /* 设置行高 */
+    margin-bottom: 1.5rem; /* 设置底部外边距 */
+ }
+
+ /*署名部分*/
+ .attribution {
+  font-size: 0.8rem; /* 设置字体大小 */
+  text-align: center; /* 文本居中 */
+  margin-top: 2rem; /* 设置顶部外边距 */
+  position: absolute; /* 绝对定位 */
+  bottom: 1rem; /* 距离底部 1rem */
+}
+
+.attribution a {
+  color: var(--color-grey); /* 设置链接颜色 */
+  text-decoration: none; /* 移除下划线 */
+}
+
+/*移动端*/
+@media (min-width: 768px) {
+  .qr-code-card {
+    width: 22rem; /* 调整卡片宽度以适应桌面端 */
+    padding: 1.125rem; /* 调整卡片内边距 */
+  }
+
+  .qr-code-card h2 {
+    margin-top: 1.75rem; /* 调整标题顶部外边距 */
+  }
+}
